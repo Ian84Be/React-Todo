@@ -1,16 +1,59 @@
-.todo-list li {
-    color:orange;
-    &:hover {
-        cursor:pointer;
-        text-decoration:line-through;
-    }
-
-    &.completed {
-        text-decoration:line-through;
-        color:black;
-
-        &:hover {
-            color:red;
-        }
-    }
+@import 'reset';
+@mixin center() {
+    display:flex;
+    justify-content: center;   
+    align-items: center;
 }
+@mixin devPillow() {
+    margin:10px;
+    padding:10px;
+}
+
+h2 {
+    font-size:2rem;
+}
+
+#root {
+    border:1px solid red;
+    max-width:500px;
+    margin:0 auto;
+    @include center;
+    flex-direction: column;
+
+    .list-container {
+        border:1px solid magenta;
+        @include devPillow;
+    }
+
+    .todo-list {
+        border:1px solid cyan;
+        @include devPillow;
+        
+        li {
+            color:orange;
+            @include devPillow;
+
+            &:hover {
+                cursor:pointer;
+                text-decoration:line-through;
+            }
+            
+            &.completed {
+                text-decoration:line-through;
+                color:black;
+                
+                &:hover {
+                    color:red;
+                }
+            }
+        }
+    }//end todo-list
+
+    form {
+        border:1px solid grey;
+        @include devPillow;
+        display:flex;
+        flex-direction: column;
+    }
+    
+} //end root

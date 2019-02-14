@@ -1,0 +1,17 @@
+.todo-list li {
+    color:green
+}
+
+.todo-list li:hover {
+    cursor:pointer;
+    text-decoration:line-through;
+}
+
+.todo-list li.completed {
+    text-decoration:line-through;
+    color:black;
+}
+
+.todo-list li.completed:hover {
+    color:red;
+}

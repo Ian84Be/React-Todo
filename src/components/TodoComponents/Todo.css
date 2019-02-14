@@ -1,17 +1,16 @@
 .todo-list li {
-    color:green
+  color: orange;
 }
-
 .todo-list li:hover {
-    cursor:pointer;
-    text-decoration:line-through;
+  cursor: pointer;
+  text-decoration: line-through;
 }
-
 .todo-list li.completed {
-    text-decoration:line-through;
-    color:black;
+  text-decoration: line-through;
+  color: black;
+}
+.todo-list li.completed:hover {
+  color: red;
 }
 
-.todo-list li.completed:hover {
-    color:red;
-}
+/*# sourceMappingURL=Todo.css.map */

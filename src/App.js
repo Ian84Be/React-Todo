@@ -14,7 +14,7 @@ class App extends React.Component {
 
   formHandler = e => {
     this.setState({
-      task: e.target.value
+      [e.target.name]: e.target.value
     });
   }
 
@@ -36,7 +36,7 @@ class App extends React.Component {
     let clickId = parseFloat(e.target.id);
     this.state.todos.forEach(item => {
       if (clickId === item.id) {
-        item.completed ? item.completed = false : item.completed = true;
+        item.completed = !item.completed;
       } 
     });
     e.target.classList.toggle('completed');

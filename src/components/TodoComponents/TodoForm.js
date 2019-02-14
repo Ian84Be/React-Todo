@@ -5,7 +5,7 @@ function TodoForm(props) {
         <form onSubmit={props.onSubmit}>
             <input name="task" value={props.value} onChange={props.onChange} placeholder="TASK" type="text" />
             <button type="submit">SUBMIT</button>
-            <button onSubmit={props.clearTodo}>CLEAR COMPLETED</button>
+            <button onClick={props.clearTodo}>CLEAR COMPLETED</button>
         </form>
     );
 }

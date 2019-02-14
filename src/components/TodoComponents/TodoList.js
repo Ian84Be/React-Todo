@@ -1,19 +1,18 @@
 import React from 'react';
-import Todo from './Todo';
 
 function TodoList(props) {
     return (
-        <div className="todo-list">
+        <ul>
             {props.todos.map(item => {
                 return (
-                    <Todo
+                    <li
                         key={item.id}
                         task={item.task}
                         id={item.id}
-                    />
+                    >{item.task}</li>
                 )
             })}
-        </div>
+        </ul>
     );
 }
 export default TodoList;

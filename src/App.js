@@ -20,6 +20,7 @@ class App extends React.Component {
 
   addTodo = e => {
     e.preventDefault();
+    if (this.state.task === '') return;
     const newTodo = {
       task: this.state.task,
       id: Date.now(),
@@ -32,22 +33,34 @@ class App extends React.Component {
   }
 
   listClick = e => {
+    let clickId = parseFloat(e.target.id);
+    this.state.todos.forEach(item => {
+      if (clickId === item.id) {
+        item.completed ? item.completed = false : item.completed = true;
+      } 
+    });
     e.target.classList.toggle('completed');
   }
 
   clearTodo = e => {
-    
+    e.preventDefault();
+    console.log('cleartodo');
+    this.setState({
+      todos: this.state.todos.filter(item => item.completed === false)
+    });
   }
 
   render() {
     return (
       <div className="list-container">
         <h2>DOING IT</h2>
-        <div className="todo-list" onClick={this.listClick}>
+
+        <div className="todo-list" onClick={this.listClick}> 
           <TodoList
             todos={this.state.todos}
           />
         </div>
+
         <TodoForm
           onSubmit={this.addTodo}
           onChange={this.formHandler}

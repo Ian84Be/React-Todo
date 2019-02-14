@@ -1,8 +1,8 @@
-import React from 'react';
+// import React from 'react';
 
-function Todo(props) {
-    return (
-        <p id={props.id}>{props.task}</p>
-    );
-}
-export default Todo;
+// function Todo(props) {
+//     return (
+//         <p>{props.task}</p>
+//     );
+// }
+// export default Todo;

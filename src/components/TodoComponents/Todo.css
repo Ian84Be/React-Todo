@@ -1,16 +1,17 @@
-.todo-list p {
-    color:red;
+.todo-list li {
+    color:green
 }
 
-.todo-list p:hover {
+.todo-list li:hover {
     cursor:pointer;
-    color:green;
     text-decoration:line-through;
-
 }
 
-.todo-list p.completed {
+.todo-list li.completed {
     text-decoration:line-through;
     color:black;
-    /* display:none; */
+}
+
+.todo-list li.completed:hover {
+    color:red;
 }

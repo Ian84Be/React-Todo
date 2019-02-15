@@ -1,0 +1,129 @@
+@import 'reset';
+
+@mixin center() {
+    display:flex;
+    justify-content: center;   
+    align-items: center;
+}
+
+$ux-bg:#442587;
+$ux-second:#fd5d67;
+$ux-third:#fdb9ac;
+$ux-grey:#c6c6c6;
+$ux-text:#ffffff;
+$ux-alt-text:#2e2e2e;
+
+body {
+    background: $ux-bg;
+}
+
+button {
+    border:1px solid white;
+    border-radius:5px;
+    background: $ux-second;
+    color:$ux-text;
+    outline: none;
+    font-size:1rem;
+    transition-duration: 0.4s;
+
+    &:hover {
+        background: $ux-bg;
+        color: $ux-second;
+    }
+}
+
+#root {
+    border:1px dashed white;
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    color:$ux-text;
+    padding:20px;
+    margin:20px auto;
+    max-width:80%;
+    
+    @include center;
+    flex-direction: column;
+
+    .app-container {
+        border:1px solid cyan;
+        border-radius:5px;
+        padding:20px;
+        // @include center;
+        display: flex;
+        max-width:600px;
+
+        h2 {
+            font-size:2rem;
+        }
+        
+    }
+
+    .left {
+        border:1px solid orange;
+        @include center;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-wrap: break-word;
+
+        form {
+            // border:1px solid white;
+            @include center;
+            // width:100%;
+            margin:20px;
+
+            input {
+                border:1px solid $ux-second;
+                border-radius:5px;
+                padding:10px;
+                outline: none;
+
+                &:focus {
+                    background:$ux-second;
+                    border:1px solid $ux-second;
+                }
+            }
+        }
+
+        .todo-list {
+            // border:1px solid cyan;
+
+            ul {
+                // border:1px solid white;
+                list-style-type: circle;
+                max-width:300px;
+                display:flex;
+                flex-direction: column;
+                
+                
+            }
+            
+            li {
+                // border:1px solid red;
+                color:orange;
+                list-style-position: outside;
+                &:hover {
+                    cursor:pointer;
+                    text-decoration:line-through;
+                }
+                
+                &.completed {
+                    text-decoration:line-through;
+                    color:black;
+                    &:hover {
+                        color:red;
+                    }
+                }
+            }
+        }//end todo-list
+    }//end left
+
+    .right {
+        border:1px solid red;
+        @include center;
+        flex-direction: column;
+        align-self: baseline;
+        padding:20px;
+    }
+
+    
+} //end root

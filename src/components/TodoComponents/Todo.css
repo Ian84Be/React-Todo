@@ -52,51 +52,101 @@ table {
   border-spacing: 0;
 }
 
-h2 {
-  font-size: 2rem;
+body {
+  background: #442587;
+}
+
+button {
+  border: 1px solid white;
+  border-radius: 5px;
+  background: #fd5d67;
+  color: #ffffff;
+  outline: none;
+  font-size: 1rem;
+  transition-duration: 0.4s;
+}
+button:hover {
+  background: #442587;
+  color: #fd5d67;
 }
 
 #root {
-  border: 1px solid red;
-  max-width: 500px;
-  margin: 0 auto;
+  border: 1px dashed white;
+  border-radius: 5px;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  color: #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-#root .list-container {
-  border: 1px solid magenta;
-  margin: 10px;
-  padding: 10px;
-}
-#root .todo-list {
+#root .app-container {
   border: 1px solid cyan;
-  margin: 10px;
-  padding: 10px;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  max-width: 600px;
 }
-#root .todo-list li {
+#root .app-container h2 {
+  font-size: 2rem;
+}
+#root .left {
+  border: 1px solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-wrap: break-word;
+}
+#root .left form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+#root .left form input {
+  border: 1px solid #fd5d67;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}
+#root .left form input:focus {
+  background: #fd5d67;
+  border: 1px solid #fd5d67;
+}
+#root .left .todo-list ul {
+  list-style-type: circle;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+#root .left .todo-list li {
   color: orange;
-  margin: 10px;
-  padding: 10px;
+  list-style-position: outside;
 }
-#root .todo-list li:hover {
+#root .left .todo-list li:hover {
   cursor: pointer;
   text-decoration: line-through;
 }
-#root .todo-list li.completed {
+#root .left .todo-list li.completed {
   text-decoration: line-through;
   color: black;
 }
-#root .todo-list li.completed:hover {
+#root .left .todo-list li.completed:hover {
   color: red;
 }
-#root form {
-  border: 1px solid grey;
-  margin: 10px;
-  padding: 10px;
+#root .right {
+  border: 1px solid red;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  align-self: baseline;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=Todo.css.map */

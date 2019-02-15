@@ -20,7 +20,6 @@ class App extends React.Component {
 
   addTodo = e => {
     e.preventDefault();
-    if (this.state.task === '') return;
     const newTodo = {
       task: this.state.task,
       id: Date.now(),
@@ -37,7 +36,7 @@ class App extends React.Component {
     this.state.todos.forEach(item => {
       if (clickId === item.id) {
         item.completed = !item.completed;
-      } 
+      }
     });
     e.target.classList.toggle('completed');
   }
@@ -52,21 +51,37 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="list-container">
-        <h2>DOING IT</h2>
+      <div className="app-container">
 
-        <div className="todo-list" onClick={this.listClick}> 
-          <TodoList
-            todos={this.state.todos}
+
+        <div className="left">
+        <button type="submit" form="todoForm">DOING IT</button>
+
+
+          <TodoForm
+            addTodo={this.addTodo}
+            onChange={this.formHandler}
+            value={this.state.task}
+            clearTodo={this.clearTodo}
           />
+
+          <div className="todo-list" onClick={this.listClick}>
+            <TodoList
+              todos={this.state.todos}
+            />
+          </div>
+        </div> 
+        {/* end left column */}
+
+        <div className="right">
+        
+
+        <button onClick={this.clearTodo}>CLEAR COMPLETED</button>
         </div>
 
-        <TodoForm
-          onSubmit={this.addTodo}
-          onChange={this.formHandler}
-          value={this.state.task}
-          clearTodo={this.clearTodo}
-        />
+
+
+
       </div>
     );
   }
